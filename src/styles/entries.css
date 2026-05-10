@@ -1,0 +1,299 @@
+.entry {
+    margin-bottom: 16px;
+    background: var(--surface);
+    counter-increment: problem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-left: 6px solid var(--accent);
+    border-radius: 18px;
+    padding: 18px 20px 18px;
+    overflow: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.entry:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.entry_img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.entry .thumb {
+    border: var(--lightBorder);
+    max-width: 100px;
+}
+
+.entry_main {
+    overflow: auto;
+}
+
+.entry .id:before {
+    content: counter(problem) ". ";
+    color: gray;
+}
+
+.entry .id {
+    font-size: 10pt;
+    padding: 0;
+    margin: 0 25px 0 0;
+    display: inline-block;
+}
+
+.entry .series, .entry .year {
+    font-size: 10pt;
+    padding: 0;
+    margin: 0 0 0 5px;
+    color: #999999;
+    display: inline-block;
+    cursor: hand;
+}
+
+.entry .title {
+    font-weight: 700;
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.entry .authors {
+    font-size: 11pt;
+    overflow: auto;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.entry .author {
+    font-size: 10.5pt;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+    margin-bottom: 6px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #f8fafc;
+    color: #334155;
+    transition: background 0.18s ease;
+}
+
+.entry .author:hover {
+    background: #e2e8f0;
+}
+
+.entry .author .first_name {
+    font-size: 8pt;
+}
+
+.entry .tags {
+    font-size: 11pt;
+    margin-top: 12px;
+}
+
+.entry .tags .tag_category {
+    font-size: 9pt;
+    font-weight: 700;
+    margin-right: 6px;
+    color: #475569;
+}
+
+.entry .tags .tag {
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    margin: 4px 6px 4px 0;
+    border-radius: 999px;
+    background: #f1f5f9;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.entry .tags .tag:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.entry .tags .add_tag .tag_input {
+    display: none;
+}
+
+.entry .abstract {
+    font-size: 10pt;
+    font-style: italic;
+    margin: 5px 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.entry .abstract:hover {
+    color: #555555;
+}
+
+.entry .abstract .expand {
+    margin: 0 2px;
+    font-family: 'ModernPictogramsNormal';
+    font-size: 16pt;
+    position: absolute;
+    font-style: normal;
+    bottom: -4px;
+}
+
+.entry .comment {
+    font-size: 10pt;
+    border: var(--lightBorder);
+    padding: 5px;
+}
+
+.entry .label {
+    font-weight: bold;
+}
+
+.entry .links {
+    font-size: 9pt;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.entry .links a {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.entry .links a:before {
+    content: none;
+}
+
+.entry .links a:visited {
+    color: #666666;
+}
+
+.entry .reference {
+    clear: both;
+    font-size: 9pt;
+    margin-left: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.entry ul {
+    clear: both;
+}
+
+.entry .clusters {
+    font-size: 10pt;
+}
+
+.entry .clusters .label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.entry .cluster {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.entry .cluster:hover {
+    background: #DDDDDD;
+}
+
+.entry .button {
+    margin: 0 10px 1px 0;
+    border: none;
+    border-radius: 0;
+}
+
+.entry .button.active {
+    background: red;
+}
+
+.entry .citation_incoming_frequency, .entry .citation_outgoing_frequency {
+    font-size: 8pt;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.entry .entry_control {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.entry .select_similar {
+    float: left;
+}
+
+.entry .bibtex_control {
+    float: right;
+}
+
+.entry .bibtex_control .symbol {
+    font-size: 10pt;
+    color: #CD9000;
+}
+
+.entry .bibtex_warnings {
+    font-size: 9pt;
+    background: var(--warningBgColor);
+    margin: 0 0 2px;
+    padding: 2px;
+    border: var(--lightBorder);
+    clear: both;
+}
+
+.entry .bibtex_warnings .label {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.entry .bibtex_warnings ul {
+    padding: 0;
+    margin: 0;
+}
+
+.entry .bibtex_warnings ul li {
+    margin-left: 20px;
+    list-style-type: square;
+    cursor: pointer;
+}
+
+.entry .bibtex_warnings ul li:hover {
+    background-color: #d2c68a;
+}
+
+.entry .bibtex_warnings ul ul li {
+    margin-left: 40px;
+    list-style-type: circle;
+}
+
+.entry .bibtex_add_field  {
+    font-size: 9pt;
+    margin: 2px;
+}
+
+.entry .CodeMirror {
+    margin: 0 0 2px;
+}
+
+.entry .citation_control {
+    float: right;
+}
+
+.entry .citation {
+    background: white;
+    font-size: 10pt;
+    margin: 0 0 2px;
+    padding: 2px;
+    border: var(--lightBorder);
+    clear: both;
+}
